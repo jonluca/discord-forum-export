@@ -1,0 +1,72 @@
+{
+  "name": "discord-forum-export",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "author": "Jonluca DeCaro",
+  "description": "Discord Forum Export is a tool to export Discord forums",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "tsconfig.json"
+  ],
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "keywords": [
+    "discord"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonluca/discord-forum-export.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonluca/discord-forum-export/issues"
+  },
+  "homepage": "https://github.com/jonluca/discord-forum-export",
+  "scripts": {
+    "run": "ts-node src/index.ts",
+    "prepublishOnly": "yarn build",
+    "lint": "eslint src",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|har|json|css|md)\""
+  },
+  "dependencies": {
+    "discord.js": "^14.12.1",
+    "lodash": "^4.17.21",
+    "ts-node": "^10.9.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "8.44.2",
+    "@types/lodash": "^4.14.196",
+    "@types/node": "^20.4.8",
+    "@types/sort-json": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.1",
+    "typescript": "5.1.6"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx}": [
+      "eslint --cache --fix"
+    ],
+    "**/*.{js,ts,jsx,tsx,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "tag": "latest"
+  }
+}
